@@ -11,7 +11,7 @@ GEM
       fssm (>= 0.2.7)
       sass (~> 3.1)
     daemons (1.1.9)
-    ecstatic (0.0.2)
+    ecstatic (0.0.3)
       coffee-script
       haml
       rake
