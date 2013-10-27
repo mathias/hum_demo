@@ -1,0 +1,16 @@
+*.gem
+pkg/
+_site/
+.bundle/
+gh-pages/
+site/_site/
+
+# OSX
+.DS_Store
+
+# vim
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~

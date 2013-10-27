@@ -1,0 +1,45 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.6.3)
+    daemons (1.1.9)
+    ecstatic (0.0.2)
+      coffee-script
+      haml
+      rake
+      rdiscount
+      sass
+      sinatra
+      thin
+      thor
+      watchr
+    eventmachine (1.0.3)
+    execjs (2.0.2)
+    haml (4.0.3)
+      tilt
+    rack (1.5.2)
+    rack-protection (1.5.1)
+      rack
+    rake (10.1.0)
+    rdiscount (2.1.7)
+    sass (3.2.12)
+    sinatra (1.4.4)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    thin (1.6.0)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.5.0)
+    thor (0.18.1)
+    tilt (1.4.1)
+    watchr (0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ecstatic
