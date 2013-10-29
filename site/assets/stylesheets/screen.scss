@@ -46,5 +46,44 @@ body {
     @include prepend(1);
     @include column(10);
     @include append(1);
+
+    #synth {
+      background-color: #999;
+      width: 20rem;
+      padding: 3rem;
+
+      #keyboard {
+        height: 7rem;
+        ul {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          width: 100%;
+          list-style: none;
+          li {
+            position: relative;
+            display: inline;
+            float: left;
+            width: 40px;
+            height: 100%;
+            background: white;
+            border-right: 1px solid #333;
+
+            &.accidental {
+              background: black;
+              height: 60%;
+              width: 30px;
+              margin-left: -15px;
+              margin-right: -15px;
+              z-index: 100;
+            }
+
+            &:last-child {
+              border: none;
+            }
+          }
+        }
+      }
+    }
   }
 }

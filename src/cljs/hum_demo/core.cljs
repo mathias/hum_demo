@@ -16,9 +16,36 @@
 
 (hum/connect output (.-destination ctx))
 
+(defn note-num-to-frequency [note-num]
+  (let [expt-numerator (- note-num 49)
+        expt-denominator 12
+        expt (/ expt-numerator expt-denominator)
+        multiplier (.pow js/Math 2 expt)
+        a 440]
+  (* multiplier a)))
 
+(defn keyboard-click-handler [event note-num]
+  (let [keyboard-key (.-target event)
+        freq (note-num-to-frequency note-num)]
+    (hum/note-on ctx output vco freq)))
+
+(defn note-off []
+  (hum/note-off ctx output))
+
+(defn create-keyboard [keyboard]
+  (doseq [i (range 40 52)]
+    (.log js/console i)
+    (let [keyboard-note (node :li)]
+      (dommy/set-attr! keyboard-note :id (str "note-" i))
+      (dommy/append! keyboard keyboard-note)
+      (if (some #{i} [41 43 46 48 50]) ;; black keys
+        (dommy/add-class! keyboard-note "accidental"))
+      (dommy/listen! keyboard-note :mousedown #(keyboard-click-handler % i))
+      (dommy/listen! keyboard-note :mouseup note-off)))
+  (dommy/listen! keyboard :mouseup note-off)
+  (dommy/listen! keyboard :mouseleave note-off))
 (defn setup []
-  ;; do other stuff
-  )
+  (let [keyboard (sel1 "#keyboard ul")]
+    (create-keyboard keyboard)))
 
 (set! (.-onload js/window) setup)
