@@ -33,7 +33,7 @@
   (hum/note-off ctx output))
 
 (defn create-keyboard [keyboard]
-  (doseq [i (range 40 52)]
+  (doseq [i (range 40 53)]
     (.log js/console i)
     (let [keyboard-note (node :li)]
       (dommy/set-attr! keyboard-note :id (str "note-" i))
