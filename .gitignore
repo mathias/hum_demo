@@ -16,3 +16,6 @@ Session.vim
 *~
 
 .sass-cache
+
+# cljs
+target/
