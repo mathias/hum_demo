@@ -12,9 +12,9 @@
 (hum/connect vco vcf)
 (hum/connect vcf output)
 
-(hum/start-osc ctx vco)
+(hum/start-osc vco)
 
-(hum/connect output (.-destination ctx))
+(hum/connect-output output)
 
 (defn note-num-to-frequency [note-num]
   (let [expt-numerator (- note-num 49)
@@ -27,10 +27,10 @@
 (defn keyboard-click-handler [event note-num]
   (let [keyboard-key (.-target event)
         freq (note-num-to-frequency note-num)]
-    (hum/note-on ctx output vco freq)))
+    (hum/note-on output vco freq)))
 
 (defn note-off []
-  (hum/note-off ctx output))
+  (hum/note-off output))
 
 (defn create-keyboard [keyboard]
   (doseq [i (range 40 53)]
