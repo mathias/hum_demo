@@ -1,8 +1,7 @@
 (ns hum-demo
   (:require [hum.core :as hum]
-            [dommy.utils :as utils]
             [dommy.core :as dommy])
-  (:use-macros [dommy.macros :only [node sel sel1]]))
+  (:use-macros [dommy.macros :only [node sel1]]))
 
 (def ctx (hum/create-context))
 (def vco (hum/create-osc ctx :square))
@@ -34,7 +33,6 @@
 
 (defn create-keyboard [keyboard]
   (doseq [i (range 40 53)]
-    (.log js/console i)
     (let [keyboard-note (node :li)]
       (dommy/set-attr! keyboard-note :id (str "note-" i))
       (dommy/append! keyboard keyboard-note)
