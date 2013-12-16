@@ -9,7 +9,8 @@
 
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/clojurescript "0.0-1889"]
-                 [prismatic/dommy "0.1.1"]]
+                 [prismatic/dommy "0.1.1"]
+                 [hum "0.3.0"]]
 
   :plugins [[lein-cljsbuild "0.3.3"]]
   ;; cljsbuild tasks configuration

@@ -5,7 +5,7 @@
   (:use-macros [dommy.macros :only [node sel sel1]]))
 
 (def ctx (hum/create-context))
-(def vco (hum/create-osc ctx :sawtooth))
+(def vco (hum/create-osc ctx :square))
 (def vcf (hum/create-biquad-filter ctx))
 (def output (hum/create-gain ctx))
 
