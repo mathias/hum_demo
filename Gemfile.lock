@@ -1,17 +1,25 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    chunky_png (1.2.9)
-    coffee-script (2.2.0)
+    chunky_png (1.3.11)
+    coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
-    compass (0.12.2)
+    coffee-script-source (1.12.2)
+    compass (1.0.3)
       chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-    daemons (1.1.9)
-    ecstatic (0.0.3)
+      compass-core (~> 1.0.2)
+      compass-import-once (~> 1.0.5)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      sass (>= 3.3.13, < 3.5)
+    compass-core (1.0.3)
+      multi_json (~> 1.0)
+      sass (>= 3.3.0, < 3.5)
+    compass-import-once (1.0.5)
+      sass (>= 3.2, < 3.5)
+    daemons (1.3.0)
+    ecstatic (0.0.5)
       coffee-script
       haml
       rake
@@ -21,28 +29,36 @@ GEM
       thin
       thor
       watchr
-    eventmachine (1.0.3)
-    execjs (2.0.2)
-    fssm (0.2.10)
-    haml (4.0.3)
+    eventmachine (1.2.7)
+    execjs (2.7.0)
+    ffi (1.9.25)
+    haml (5.0.4)
+      temple (>= 0.8.0)
       tilt
     hpricot (0.8.6)
-    rack (1.5.2)
-    rack-protection (1.5.1)
+    multi_json (1.13.1)
+    mustermann (1.0.3)
+    rack (2.0.6)
+    rack-protection (2.0.4)
       rack
-    rake (10.1.0)
-    rdiscount (2.1.7)
-    sass (3.2.12)
-    sinatra (1.4.4)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (~> 1.3, >= 1.3.4)
-    thin (1.6.0)
-      daemons (>= 1.0.9)
-      eventmachine (>= 1.0.0)
-      rack (>= 1.5.0)
-    thor (0.18.1)
-    tilt (1.4.1)
+    rake (12.3.2)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.9.10)
+      ffi (>= 0.5.0, < 2)
+    rdiscount (2.2.0.1)
+    sass (3.4.25)
+    sinatra (2.0.4)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.4)
+      tilt (~> 2.0)
+    temple (0.8.0)
+    thin (1.7.2)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
+    thor (0.20.3)
+    tilt (2.0.9)
     watchr (0.7)
 
 PLATFORMS
@@ -51,4 +67,9 @@ PLATFORMS
 DEPENDENCIES
   compass
   ecstatic
+  eventmachine (>= 1.2.7)
   hpricot
+  rack (>= 1.6.11)
+
+BUNDLED WITH
+   1.17.2
